@@ -11,8 +11,6 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.setValue = this.setValue.bind(this);
   }
-  12;
-  22;
 
   state: {
     url: string;
