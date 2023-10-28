@@ -12,14 +12,10 @@
     "preview": "vite preview",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "src/**/*.tsx": [
+    "src/**/*.{ts,tsx}": [
       "npm run lint:fix",
+      "npm run format:fix",
       "git add"
     ]
   },
@@ -41,7 +37,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "typescript": "^5.0.2",
