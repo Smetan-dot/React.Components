@@ -1,52 +1,41 @@
 import React from 'react';
 import './Results.css';
+import planet from '../../assets/planet.gif';
 
-type Planet = {
-    name: string,
-    diameter: string,
-    climate: string,
-    terrain: string,
-    population: string,
+export type Planet = {
+  name: string;
+  diameter: string;
+  climate: string;
+  terrain: string;
+  population: string;
+};
+
+interface propsType {
+  items: Planet[];
 }
 
-class Results extends React.Component {
-    state: {items: Planet[], DataisLoaded: boolean} = {
-      items: [],
-      DataisLoaded: false,
-    };
-
-    async componentDidMount(): Promise<void> {
-        await fetch('https://swapi.dev/api/planets/')
-        .then((res) => res.json())
-        .then((json) => {
-            this.setState({
-                items: json.results,
-                DataisLoaded: true,
-            });
-        });
-    }
-
+class Results extends React.Component<propsType> {
   render(): React.ReactNode {
-    const { items, DataisLoaded } = this.state;
-    if (!DataisLoaded)
-        return (
-            <h2> Pleses wait some time.... </h2>
-    );
+    const items = this.props.items;
+
     return (
       <div className="results-container">
-        {items.map(item => (
-            <li key={ item.name } className='results-item'>
-                <h3>{item.name}</h3>
-                <ul>
-                    <li>Diameter: {item.diameter}</li>
-                    <li>Climate: {item.climate}</li>
-                    <li>Terrain: {item.terrain}</li>
-                    <li>Population: {item.population}</li>
-                </ul>
-            </li>
+        {items.map((item) => (
+          <li key={item.name} className="results-item">
+            <h3 className="subhead">
+              <img src={planet} alt="planet" />
+              {item.name}
+            </h3>
+            <ul className="results-descripsion">
+              <li>Diameter: {item.diameter}</li>
+              <li>Climate: {item.climate}</li>
+              <li>Terrain: {item.terrain}</li>
+              <li>Population: {item.population}</li>
+            </ul>
+          </li>
         ))}
       </div>
-    )
+    );
   }
 }
 
