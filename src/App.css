@@ -19,3 +19,15 @@
   color:#d1ff2d;
   letter-spacing: 2px;
 }
+
+.crash-button {
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  color: beige;
+  background-color: darkred;
+  cursor: pointer;
+}
+
+.crash-button:hover {
+  background-color: red;
+}
