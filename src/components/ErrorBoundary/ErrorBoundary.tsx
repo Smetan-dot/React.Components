@@ -1,5 +1,4 @@
 import React, { ErrorInfo, ReactNode } from 'react';
-// import picture from '../../assets/17188591.png';
 
 interface Props {
   children?: ReactNode;
