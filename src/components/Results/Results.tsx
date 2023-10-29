@@ -17,6 +17,7 @@ interface propsType {
 class Results extends React.Component<propsType> {
   render(): React.ReactNode {
     const items = this.props.items;
+    if (items.length === 0) return <div className="results-container"></div>;
 
     return (
       <div className="results-container">
