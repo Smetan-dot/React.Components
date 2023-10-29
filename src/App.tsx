@@ -94,6 +94,12 @@ class App extends React.Component {
           handleChange={this.handleChange}
           setValue={this.setValue}
         ></Search>
+        <button
+          className="crash-button"
+          onClick={() => this.setState({ items: 0 })}
+        >
+          Crash
+        </button>
         <Results items={this.state.items}></Results>
       </div>
     );

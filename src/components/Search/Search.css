@@ -15,4 +15,15 @@
 .search-button {
     width: 20%;
     min-width: 70px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-color: rgb(255, 255, 170);
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    background-color: rgb(255, 255, 70);
 }
